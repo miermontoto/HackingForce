@@ -5,6 +5,23 @@ extern "C" bool IsValidAssembly(int a, int b, int c);
 #include <iostream>
 using namespace std;
 
+void FailedTest() {
+	cout << "Se han introducido valores incorrectos." << endl;
+	exit(0);
+}
+
+void ControlInAsmblyFile() {
+	int num1, num2, num3;
+	cin >> num1;
+	cin >> num2;
+	cin >> num3;
+
+	if (!IsValidAssembly(num1, num2, num3)) {
+		cout << 0 << endl;
+		FailedTest();
+	}
+}
+
 void ControlWithInlineAssembly() {
 	int check;
 	cin >> check;
@@ -12,9 +29,6 @@ void ControlWithInlineAssembly() {
 
 	}
 }
-
-void ControlInAsmblyFile() {}
-
 
 int main() {
 	//ControlString();

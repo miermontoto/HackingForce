@@ -34,3 +34,9 @@
 \re.rep
 
 *.gpr
+.vs
+*.suo
+*.db
+Teamwork/.vs/Teamwork/v16/.suo
+re.*
+Debug
