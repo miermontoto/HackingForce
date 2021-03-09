@@ -13,3 +13,6 @@ Trabajo en grupo desarrollado en dos fases:
 - [Enunciado sobre primera fase](https://github.com/miermontoto/HackingForce/blob/main/recursos/primeraFase.png)
 - [Código fuente y ejecutable de la segunda fase](https://github.com/miermontoto/HackingForce/blob/main/recursos/secondPhase.zip)
 
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/miermontoto/HackingForce">HackingForce</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://github.com/miermontoto/">Juan Mier</a> is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0
+
+
