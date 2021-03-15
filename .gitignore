@@ -37,6 +37,10 @@
 .vs
 *.suo
 *.db
-Teamwork/.vs/Teamwork/v16/.suo
 re.*
 Debug
+.vs
+
+*.ipch
+*.db
+Teamwork/.vs/Teamwork/v16/.suo
