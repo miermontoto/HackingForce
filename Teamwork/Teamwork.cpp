@@ -1,5 +1,5 @@
 #include <iostream>
-#define maxSizeString 10 // Longitud máxima de las cadenas a leer.
+#define maxSizeString 20 // Longitud máxima de las cadenas a leer.
 using namespace std;
 extern "C" bool IsValidAssembly(int a, int b, int c);
 
@@ -64,26 +64,31 @@ void BitControl() {
 	unsigned int num1;
 	unsigned int num2;
 
-	unsigned int temp1;
-	unsigned int temp2;
-	unsigned int temp3;
-
 	// Se leen ambos números al principio, como indicado.
 	cout << "BitControl()" << endl << "Número 1: ";
 	cin >> num1;
 	cout << "Número 2: ";
 	cin >> num2;
 	
-	temp1 = (num2 & 0x0000001C) >> 2; // Se coge desde la posición 4 hasta la 2 y se desplazan.
-	if (temp1 != 1) FailedTest("Sayonara, baby"); // Si no vale 1 en binario natural (1 en decimal), da fallo.
+	// Se coge desde la posición 4 hasta la 2 y se desplazan.
+	// Si no vale 1 en binario natural (1 en decimal), da fallo.
+	if (((num2 & 0x1C) >> 2) != 0x1) FailedTest("Sayonara, baby");
+	// es equivalente a if (num2 & 0x1C != 0x4)
 
+	int lowerMask = 0x000001FF;
+	int higherMask = 0xFFFFFFFF - lowerMask;
+	int higherNumber = num1 & higherMask;
+	int lowerNumber = num2 & lowerMask;
+	int newNumber = higherNumber | lowerNumber;
 
+	if (newNumber < 881) FailedTest("Mala suerte");
+	if ((num1 & 0x40) != 0x40) FailedTest("Estos no son los androides que buscais");
 }
 
 int main() {
-	ControlString();
-	BitControl();
-	ControlInAsmblyFile();
+	//ControlString();
+	//BitControl();
+	//ControlInAsmblyFile();
 	ControlWithInlineAssembly();
 
 	cout << "Correcto" << endl;
