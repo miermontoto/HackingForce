@@ -24,7 +24,7 @@ void ControlInAsmblyFile() {
 void ControlWithInlineAssembly(){
 	int check;
 	int status = 0;
-	cout << "ControlWithInlineAssembly() ";
+	cout << "ControlWithInlineAssembly()" << endl << "num1: ";
 	cin >> check;
 	cout << endl;
 	__asm {
@@ -47,13 +47,13 @@ void ControlWithInlineAssembly(){
 
 void ControlString() {
 	char cadena1[maxSizeString];
-	cout << "ControlString()" << endl << "Cadena 1: ";
+	cout << "ControlString()" << endl << "cad1: ";
 	cin.getline(cadena1, maxSizeString); // Se lee la cadena.
 	if (strcmp(cadena1, "otiPqhXcD") != 0) FailedTest("Sayonara, baby"); // Se compara con la cadena deseada.
 	// strcmp() devolverá 0 solo cuando las cadenas comparadas sean iguales.
 
 	char cadena2[maxSizeString];
-	cout << "Cadena 2: ";
+	cout << "cad2: ";
 	cin.getline(cadena2, maxSizeString); // Se lee la cadena.
 	if (strlen(cadena2) < 6 || cadena2[3] != cadena2[5]) FailedTest("Sayonara, baby");
 	// Se evalúa si la cadena tiene menos de 6 de longitud o si los caracteres de la
@@ -61,34 +61,40 @@ void ControlString() {
 }
 
 void BitControl() {
-	unsigned int num1;
-	unsigned int num2;
+	unsigned int n1;
+	unsigned int n2;
 
 	// Se leen ambos números al principio, como indicado.
-	cout << "BitControl()" << endl << "Número 1: ";
-	cin >> num1;
-	cout << "Número 2: ";
-	cin >> num2;
+	cout << "BitControl()" << endl << "num1: ";
+	cin >> n1;
+	cout << "num2: ";
+	cin >> n2;
 	
-	// Se coge desde la posición 4 hasta la 2 y se desplazan.
-	// Si no vale 1 en binario natural (1 en decimal), da fallo.
-	if (((num2 & 0x1C) >> 2) != 0x1) FailedTest("Sayonara, baby");
-	// es equivalente a if (num2 & 0x1C != 0x4)
+	// Secuencia de bits entre las posiciones 2 y 4 de n2 valga 1 en binario natural
+	int bits_pos_2_3_4_n2 = (n2 & 0x0000001C) >> 2;
 
-	int lowerMask = 0x000001FF;
+	if (bits_pos_2_3_4_n2 != 1) FailedTest("Sayonara, baby");
+	//  El número formado con los 23 bits de peso más alto de n1 y los 9 bits de peso más bajo de n2 es mayor que el valor 881
+	
+	int lowerMask = 0x1FF;
 	int higherMask = 0xFFFFFFFF - lowerMask;
-	int higherNumber = num1 & higherMask;
-	int lowerNumber = num2 & lowerMask;
+	int higherNumber = n1 & higherMask;
+	int lowerNumber = n2 & lowerMask;
 	int newNumber = higherNumber | lowerNumber;
 
 	if (newNumber < 881) FailedTest("Mala suerte");
-	if ((num1 & 0x40) != 0x40) FailedTest("Estos no son los androides que buscais");
+
+	// El bit 6 de n1 = 1
+	int bit_pos_6 = n1 & 0x40;
+	if (bit_pos_6 != 0x40) FailedTest("Estos no son los androides que buscais");
+	
+	
 }
 
 int main() {
-	//ControlString();
-	//BitControl();
-	//ControlInAsmblyFile();
+	ControlString();
+	BitControl();
+	ControlInAsmblyFile();
 	ControlWithInlineAssembly();
 
 	cout << "Correcto" << endl;
