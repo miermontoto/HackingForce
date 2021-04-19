@@ -7,7 +7,7 @@ Trabajo en grupo desarrollado en dos fases:
 - [ ]  Segunda fase: desactivación de una "bomba" mediante reverse-engineering, WireShark, etc teniendo el código fuente.
 
 ## Software utilizado
-Visual Studio 2019, Wireshark, Ghidra, Github Desktop
+Visual Studio 2019, Wireshark, Ghidra, GitHub Desktop
 
 ## Recursos
 - [Enunciado general del trabajo](https://github.com/miermontoto/HackingForce/blob/main/recursos/Instrucciones_Trabajos_2021.pdf)
