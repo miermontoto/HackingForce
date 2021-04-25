@@ -45,3 +45,5 @@ Debug
 *.db
 Teamwork/.vs/Teamwork/v16/.suo
 ghidra
+*.7z # Entrega de archivos
+Teamwork/PL4-4.7z
