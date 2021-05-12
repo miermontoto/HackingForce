@@ -4,7 +4,7 @@ Fundamentos de Computadores y Redes, trabajo final. (20-21)
 ## Resumen
 Trabajo en grupo desarrollado en dos fases:
 - [x]  Primera fase: programación en C++ y Assembly aplicando máscaras, condicionales, ensamblador en línea, etc.
-- [ ]  Segunda fase: desactivación de una "bomba" mediante reverse-engineering, WireShark, etc teniendo el código fuente.
+- [ ]  Segunda fase: desactivación de tres "bombas" mediante reverse-engineering, WireShark, etc, teniendo el código fuente.
 
 ## Software utilizado
 Visual Studio 2019, Wireshark, Ghidra, GitHub Desktop
