@@ -9,6 +9,8 @@ Trabajo en grupo desarrollado en dos fases:
 ## Software utilizado
 Visual Studio 2019, Wireshark, Ghidra, GitHub Desktop
 
+### Nota final: 1/1
+
 ## Recursos
 - [Enunciado general del trabajo](https://github.com/miermontoto/HackingForce/blob/main/recursos/Instrucciones_Trabajos_2021.pdf)
 - [Vídeos guía](https://github.com/miermontoto/HackingForce/tree/main/recursos/V%C3%ADdeos)
